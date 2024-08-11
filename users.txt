@@ -1,0 +1,1 @@
+[{"email":"pets123@gmail.com","password":"$2a$10$Wp.VgddedZVefIaGcBiywOpf/h8xK885lRGY.BSegO.H6VzaM9CXW"},{"email":"alassiladam@gmail.com","password":"$2a$10$8jnUAy.qnR538yxT5ZzDDuBRI/grVMq6qjcECU6Ce9yH1OEDE9bfm"}]

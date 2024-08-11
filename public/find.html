@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find a Dog/Cat - Adopt A-Cat/Dog</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+         <a href="index.html" class="logo-link">
+            <img src="./assets/images/logo.jpg" alt="Adopt A-Cat/Dog Logo" class="logo">
+            <h1 class="header-title">Adopt A-Cat/Dog</h1>
+        </a>
+        <div class="header-content">
+            <div id="date-time" class="date-time"></div>
+            
+        </div>
+    </header>
+
+
+    <!-- Sidebar -->
+    <nav class="sidebar">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="find.html">Find a Pet</a></li>
+            <li><a href="dog-care.html">Dog Care</a></li>
+            <li><a href="cat-care.html">Cat Care</a></li>
+            <li><a href="giveaway.html">Give Away</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content Area -->
+    <main class="content-area">
+        <h2>Find a Dog/Cat</h2>
+        <form id="find-form" action="/submit-form" method="POST">
+            <div class="form-group">
+                <label for="pet-type">Cat or Dog</label>
+                <select class="form-control" id="pet-type" name="petType" required>
+                    <option value="">Select...</option>
+                    <option value="Cat">Cat</option>
+                    <option value="Dog">Dog</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="breed">Breed</label>
+                <select class="form-control" id="breed" name="breed" required>
+                    <option value="">Select...</option>
+                    <option value="Doesn't matter">Doesn't matter</option>
+                    <option value="Siamese">Siamese</option>
+                    <option value="Persian">Persian</option>
+                    <option value="Maine Coon">Maine Coon</option>
+                    <option value="Bulldog">Bulldog</option>
+                    <option value="Golden Retriever">Golden Retriever</option>
+                    <option value="German Shepherd">German Shepherd</option>
+                    <option value="Bichon Frise">Bichon Frise</option>
+                    <!-- Add more breed options here -->
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="age">Preferred Age</label>
+                <select class="form-control" id="age" name="age" required>
+                    <option value="">Select...</option>
+                    <option value="Doesn't matter">Doesn't matter</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <!-- Add age range options here -->
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="gender">Preferred Gender</label>
+                <select class="form-control" id="gender" name="gender" required>
+                    <option value="">Select...</option>
+                    <option value="Doesn't matter">Doesn't matter</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Gets along with</label>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="other-dogs" name="otherDogs" value="true">
+                    <label class="form-label" for="other-dogs">Other Dogs</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="other-cats" name="otherCats" value="true">
+                    <label class="form-label" for="other-cats">Other Cats</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="small-children" name="smallChildren"
+                        value="true">
+                    <label class="form-label" for="small-children">Small Children</label>
+                </div>
+            </div>
+            <button type="submit" class="btn find-btn">Submit</button>
+            <button type="reset" class="btn find-btn">Clear</button>
+        </form>
+        <div id="find-error" class="error-message mt-3"></div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2024 Adopt A-Cat/Dog | <a href="privacy.html" class="text-white">Privacy/Disclaimer Statement</a></p>
+    </footer>
+
+    <!-- Script for Form Validation and Submission -->
+    <script>
+        document.getElementById('find-form').addEventListener('submit', function (event) {
+            event.preventDefault();
+            var formData = {
+                petType: document.getElementById('pet-type').value,
+                breed: document.getElementById('breed').value,
+                age: document.getElementById('age').value,
+                gender: document.getElementById('gender').value,
+                otherDogs: document.getElementById('other-dogs').checked,
+                otherCats: document.getElementById('other-cats').checked,
+                smallChildren: document.getElementById('small-children').checked
+            };
+
+            console.log('Form data:', formData); // Log form data to verify
+
+            fetch('/submit-form', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(formData)
+            })
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    console.log('Received data:', data); // Log received data to verify
+                    localStorage.setItem('searchResults', JSON.stringify(data));
+                    window.location.href = 'pets.html';
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    document.getElementById('find-error').innerText = 'Failed to fetch results.';
+                });
+        });
+    </script>
+</body>
+<script>
+    let page = "protected";
+</script>
+<script src="./assets/script.js"></script>
+
+</html>

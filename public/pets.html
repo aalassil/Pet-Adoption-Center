@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find a Dog/Cat - Adopt A-Cat/Dog</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+         <a href="index.html" class="logo-link">
+            <img src="./assets/images/logo.jpg" alt="Adopt A-Cat/Dog Logo" class="logo">
+            <h1 class="header-title">Adopt A-Cat/Dog</h1>
+        </a>
+        <div class="header-content">
+            <div id="date-time" class="date-time"></div>
+            
+        </div>
+    </header>
+
+    <!-- Sidebar -->
+    <nav class="sidebar">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="find.html">Find a Pet</a></li>
+            <li><a href="dog-care.html">Dog Care</a></li>
+            <li><a href="cat-care.html">Cat Care</a></li>
+            <li><a href="giveaway.html">Give Away</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content Area -->
+    <main class="content-area">
+        <h2>Results Based on Your Preferences</h2>
+        <div id="results-container">
+            <!-- Results will be dynamically populated here -->
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2024 Adopt A-Cat/Dog | <a href="privacy.html" class="text-white">Privacy/Disclaimer Statement</a></p>
+    </footer>
+
+    <!-- Script to Fetch and Display Pets -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var results = JSON.parse(localStorage.getItem('searchResults'));
+            displayResults(results);
+        });
+
+        function displayResults(results) {
+            var resultsContainer = document.getElementById('results-container');
+            resultsContainer.innerHTML = '';
+
+            if (results.length === 0) {
+                resultsContainer.innerHTML = '<p>No pets found matching your criteria.</p>';
+                return;
+            }
+
+            var html = '<h3>Search Results</h3>';
+            html += '<ul>';
+            results.forEach(pet => {
+                html += '<li>';
+                html += '<strong>' + pet.breed + '</strong>, ' + pet.age + ' years old, ' + pet.gender;
+                html += '</li>';
+            });
+            html += '</ul>';
+            resultsContainer.innerHTML = html;
+        }
+    </script>
+</body>
+<script>
+    let page = "protected";
+</script>
+<script src="./assets/script.js"></script>
+
+</html>

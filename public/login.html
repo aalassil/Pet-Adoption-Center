@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Adopt A-Cat/Dog</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+         <a href="index.html" class="logo-link">
+            <img src="./assets/images/logo.jpg" alt="Adopt A-Cat/Dog Logo" class="logo">
+            <h1 class="header-title">Adopt A-Cat/Dog</h1>
+        </a>
+        <div class="header-content">
+            <div id="date-time" class="date-time"></div>
+        </div>
+    </header>
+
+
+    <!-- Sidebar -->
+    <nav class="sidebar">
+        <ul>
+
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="content-area">
+        <div class="form-container">
+            <h2>Login</h2>
+            <form action="/login" method="post" class="form">
+                <div class="form-group">
+                    <label for="login-email">Email:</label>
+                    <input type="email" id="login-email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="login-password">Password:</label>
+                    <input type="password" id="login-password" name="password" required>
+                </div>
+                <button type="submit" class="btn">Login</button>
+            </form>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2024 Adopt A-Cat/Dog | <a href="privacy.html" class="text-white">Privacy/Disclaimer Statement</a></p>
+    </footer>
+</body>
+<script>
+    let page = "unprotected";
+</script>
+<script src="./assets/script.js"></script>
+
+</html>

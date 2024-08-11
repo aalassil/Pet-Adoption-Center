@@ -1,0 +1,266 @@
+[
+  {
+    "petType": "Cat",
+    "breed": "Persian",
+    "age": 2,
+    "gender": "Female",
+    "otherDogs": true,
+    "otherCats": true,
+    "smallChildren": true
+  },
+  {
+    "petType": "Cat",
+    "breed": "Siamese",
+    "age": 3,
+    "gender": "Male",
+    "otherDogs": false,
+    "otherCats": true,
+    "smallChildren": false
+  },
+  {
+    "petType": "Dog",
+    "breed": "Labrador",
+    "age": 1,
+    "gender": "Female",
+    "otherDogs": true,
+    "otherCats": false,
+    "smallChildren": true
+  },
+  {
+    "petType": "Dog",
+    "breed": "German Shepherd",
+    "age": 4,
+    "gender": "Male",
+    "otherDogs": false,
+    "otherCats": false,
+    "smallChildren": true
+  },
+  {
+    "petType": "Cat",
+    "breed": "British Shorthair",
+    "age": 1,
+    "gender": "Male",
+    "otherDogs": true,
+    "otherCats": true,
+    "smallChildren": true
+  },
+  {
+    "petType": "Dog",
+    "breed": "Beagle",
+    "age": 2,
+    "gender": "Female",
+    "otherDogs": true,
+    "otherCats": true,
+    "smallChildren": false
+  },
+  {
+    "petType": "Cat",
+    "breed": "American Shorthair",
+    "age": 3,
+    "gender": "Female",
+    "otherDogs": false,
+    "otherCats": true,
+    "smallChildren": true
+  },
+  {
+    "petType": "Dog",
+    "breed": "Poodle",
+    "age": 5,
+    "gender": "Male",
+    "otherDogs": true,
+    "otherCats": false,
+    "smallChildren": false
+  },
+  {
+    "petType": "Cat",
+    "breed": "Sphynx",
+    "age": 2,
+    "gender": "Female",
+    "otherDogs": true,
+    "otherCats": true,
+    "smallChildren": false
+  },
+  {
+    "petType": "Dog",
+    "breed": "Golden Retriever",
+    "age": 3,
+    "gender": "Male",
+    "otherDogs": true,
+    "otherCats": true,
+    "smallChildren": true
+  },
+  {
+    "id": 1,
+    "petType": "Dog",
+    "breed": "Persian",
+    "age": 2,
+    "gender": "Female",
+    "getsAlong": [
+      "Other Dogs",
+      "Other Cats"
+    ]
+  },
+  {
+    "id": 2,
+    "petType": "Dog",
+    "breed": "Persian",
+    "age": 2,
+    "gender": "Female",
+    "getsAlong": [
+      "Other Dogs",
+      "Other Cats"
+    ]
+  },
+  {
+    "id": 3,
+    "petType": "Cat",
+    "breed": "Persian",
+    "age": 2,
+    "gender": "Male",
+    "getsAlong": [
+      "Other Dogs",
+      "Other Cats"
+    ]
+  },
+  {
+    "id": 4,
+    "petType": "Cat",
+    "breed": "Persian",
+    "age": 2,
+    "gender": "Male",
+    "getsAlong": [
+      "Other Dogs",
+      "Other Cats"
+    ]
+  },
+  {
+    "id": 5,
+    "petType": "Cat",
+    "breed": "Persian",
+    "age": 2,
+    "gender": "Male",
+    "getsAlong": [
+      "Other Dogs",
+      "Other Cats"
+    ]
+  },
+  {
+    "id": 6,
+    "petType": "Cat",
+    "breed": "Persian",
+    "age": 2,
+    "gender": "Male",
+    "getsAlong": [
+      "Other Dogs",
+      "Other Cats"
+    ]
+  },
+  {
+    "id": 7,
+    "petType": "Cat",
+    "breed": "Persian",
+    "age": 2,
+    "gender": "Male",
+    "getsAlong": [
+      "Other Dogs",
+      "Other Cats"
+    ]
+  },
+  {
+    "id": 8,
+    "petType": "Cat",
+    "breed": "Persian",
+    "age": 2,
+    "gender": "Male",
+    "getsAlong": [
+      "Other Dogs",
+      "Other Cats"
+    ]
+  },
+  {
+    "id": 9,
+    "petType": "Cat",
+    "breed": "Persian",
+    "age": 2,
+    "gender": "Male",
+    "getsAlong": [
+      "Other Dogs",
+      "Other Cats"
+    ]
+  },
+  {
+    "id": 10,
+    "petType": "Cat",
+    "breed": "Persian",
+    "age": 2,
+    "gender": "Male",
+    "getsAlong": [
+      "Other Dogs",
+      "Other Cats"
+    ]
+  },
+  {
+    "id": 11,
+    "petType": "Dog",
+    "breed": "Siamese",
+    "age": 3,
+    "gender": "Female",
+    "getsAlong": [
+      "Other Dogs",
+      "Other Cats"
+    ]
+  },
+  {
+    "id": 12,
+    "petType": "Dog",
+    "breed": "Siamese",
+    "age": 3,
+    "gender": "Female",
+    "getsAlong": [
+      "Other Dogs",
+      "Other Cats"
+    ]
+  },
+  {
+    "id": 13,
+    "petType": "Cat",
+    "breed": "Persian",
+    "age": 3,
+    "gender": "Female",
+    "getsAlong": [
+      "Other Dogs",
+      "Other Cats",
+      "Small Children"
+    ]
+  },
+  {
+    "id": 14,
+    "petType": "Dog",
+    "breed": "Golden Retriever",
+    "age": 5,
+    "gender": "Male",
+    "getsAlong": [
+      "Other Dogs",
+      "Other Cats",
+      "Small Children"
+    ],
+    "comment": "He is very loyal",
+    "ownerName": "Adam",
+    "ownerEmail": "alassiladam@gmail.com"
+  },
+  {
+    "id": 15,
+    "petType": "Cat",
+    "breed": "Siamese",
+    "age": 1,
+    "gender": "Male",
+    "getsAlong": [
+      "Other Dogs",
+      "Other Cats",
+      "Small Children"
+    ],
+    "comment": "very clean",
+    "ownerName": "adam",
+    "ownerEmail": "alassiladam@gmail.com"
+  }
+]

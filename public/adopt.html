@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Browse Available Pets - Adopt A-Cat/Dog</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+         <a href="index.html" class="logo-link">
+            <img src="./assets/images/logo.jpg" alt="Adopt A-Cat/Dog Logo" class="logo">
+            <h1 class="header-title">Adopt A-Cat/Dog</h1>
+        </a>
+        <div class="header-content">
+            <h1 class="header-title">Adopt A-Cat/Dog</h1>
+            <div id="date-time" class="date-time"></div>
+        </div>
+    </header>
+
+    <!-- Sidebar -->
+    <nav class="sidebar">
+        <ul>
+
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="content-area">
+        <h2>Browse Available Pets</h2>
+        <div id="pets-container">
+            <!-- Pets will be dynamically populated here -->
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2024 Adopt A-Cat/Dog | <a href="privacy.html" class="text-white">Privacy/Disclaimer Statement</a></p>
+    </footer>
+</body>
+<script>
+    let page = "protected";
+</script>
+<script src="./assets/script.js"></script>
+ <!-- Script to Fetch and Display Pets -->
+ <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        fetch('/pets.txt')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Failed to fetch pets data.');
+                }
+                return response.json();
+            })
+            .then(data => {
+                displayPets(data);
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                document.getElementById('pets-container').innerHTML = '<p>Failed to fetch pets data.</p>';
+            });
+    });
+
+    function displayPets(pets) {
+        var petsContainer = document.getElementById('pets-container');
+        petsContainer.innerHTML = '';
+
+        if (pets.length === 0) {
+            petsContainer.innerHTML = '<p>No pets available.</p>';
+            return;
+        }
+
+        var html = '<ul>';
+        pets.forEach(pet => {
+            html += '<li>';
+            html += '<strong>' + pet.breed + '</strong>, ' + pet.age + ' years old, ' + pet.gender;
+            html += '</li>';
+        });
+        html += '</ul>';
+        petsContainer.innerHTML = html;
+    }
+</script>
+</html>
